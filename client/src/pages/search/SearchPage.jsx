@@ -1,3 +1,4 @@
+import Progressing from '@/components/custom/home/Progressing';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -85,7 +86,7 @@ const SearchPage = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {loading && (
-          <p className="text-center text-gray-600"><Loader2 className='w-4 h-4 animate-spin' /> Loading...</p>
+          <Progressing />
         )}
         {results.length === 0 && (
           <p className="text-center text-gray-600">No restaurants found.</p>

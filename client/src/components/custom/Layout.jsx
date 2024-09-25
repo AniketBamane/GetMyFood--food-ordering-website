@@ -8,13 +8,13 @@ import orderStore from '@/store/orderStore'
 
 const Layout = () => {
   const {getOrders} = orderStore()
+  const {getCurrentUser} = authStore()
   const [loading,setLoading] = useState(false)
   const [error,setError] =  useState("")
   const fetchEverything = async ()=>{
    setLoading(true)
    try{
-    await getOrders()
-
+    await Promise.all([getCurrentUser(), getOrders()]);
     }catch(err){
      setError(err.message)
     }finally{

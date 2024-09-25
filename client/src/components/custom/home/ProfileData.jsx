@@ -9,6 +9,7 @@ import React from 'react';
 import EditProfileForm from './EditProfileForm';
 import { toast } from 'sonner';
 import authStore from '@/store/authStore';
+import { useNavigate } from 'react-router-dom';
 
 const ProfileData = () => {
   const { loading ,logout ,user} = authStore()
@@ -50,7 +51,7 @@ const ProfileData = () => {
     <Button variant="link" disabled={loading}><ArrowRight className='mr-2' /> Edit profile</Button>
       </DialogTrigger>
       <EditProfileForm />
-    <Button variant="link"><LogOut className='mr-2' onClick={hangleLogout}
+    <Button variant="link"  onClick={hangleLogout}><LogOut className='mr-2'
     disabled={loading}
     /> logout</Button>
     </Dialog> 

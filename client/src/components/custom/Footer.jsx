@@ -31,7 +31,7 @@ const Footer = () => (
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
           <ul className='space-y-2'>
             <li>
-              <Link to="/prders" className="hover:text-gray-400">Orders</Link>
+              <Link to="/orders" className="hover:text-gray-400">Orders</Link>
             </li>
             <li>
               <Link to="cart" className="hover:text-gray-400">Cart</Link>
@@ -39,9 +39,7 @@ const Footer = () => (
             <li>
               <Link to="/about-us" className="hover:text-gray-400">About Us</Link>
             </li>
-            <li>
-              <Link to="/contact-us" className="hover:text-gray-400">Contact</Link>
-            </li>
+          
           </ul>
         </div>
 

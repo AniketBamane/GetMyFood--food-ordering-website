@@ -10,6 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import CreateRestaurant from "@/components/custom/form/CreateRestaurant";
+import Progressing from "@/components/custom/home/Progressing";
 
 
 const Restaurant = () => {
@@ -36,7 +37,7 @@ const Restaurant = () => {
   <div className="min-h-screen">
   {
     loading ?  
-  <p> <Loader2 className="w-4 h-4 animate-spin" /> fetching Restaurants ....</p>
+  <Progressing />
   :
   <>
   <div className="flex justify-between mt-2 items-center">

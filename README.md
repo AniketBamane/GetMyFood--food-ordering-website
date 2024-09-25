@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GetMyFood - README</title>
-</head>
-
-<body>
 
   <h1 align="center">GetMyFood 🍽️</h1>
 
@@ -61,6 +51,20 @@
     and updates about their orders.</p>
 
   <hr>
+    <h2>📱 User Interfaces : </h2>
+    <h3>Users Pages : </h3>
+    <img src="image.png" alt="home page">
+    <img src="image-2.png" alt="search page ">
+    <img src="image-3.png" alt="order page ">
+    <img src="image-4.png" alt="restaurant page">
+    <img src="image-5.png" alt="cart page">
+    <img src="image-6.png" alt="profile section">
+    <h3>Admin Pages : </h3>
+    <img src="image-7.png" alt="orders page">
+    <img src="image-8.png" alt="restaurants page">
+    <img src="image-9.png" alt="create-restaurant page">
+    <img src="image-10.png" alt="create-dish page">
+  <hr>
 
   <h2>📦 Installation & Setup</h2>
   <ol>
@@ -97,6 +101,4 @@
   <h2>🌐 Live Demo</h2>
   <p>Check out the live demo of the application <a href="#">here</a>.</p>
 
-</body>
 
-</html>

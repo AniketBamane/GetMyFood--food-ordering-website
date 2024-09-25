@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Edit, Plus, Minus, Check, Loader2, ArrowLeft, Trash } from 'lucide-react'; // Import Lucide React icons
@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import CheckoutForm from '@/components/custom/form/CheckoutForm';
+import Progressing from '@/components/custom/home/Progressing';
 
 const Cart = () => {
   // State for cart items and total price
@@ -97,6 +98,7 @@ const Cart = () => {
       },1000)
     }
   };
+
 //  console.log(loading, " loading in user")
 console.log(user)
   return (
@@ -112,15 +114,15 @@ console.log(user)
         <section>
           <h2 className="text-3xl font-bold mb-6">My Cart</h2>
           { loading ? (
-            <p className="text-center"> <Loader2 className='w-4 h-4 animate-spin' /> Loading cart...</p>
+           <Progressing />
           ) : null }
-          {user.cart.dishes.length === 0 ? (
+          {user !== null && user?.cart?.dishes.length === 0 ? (
             <Card className="p-6 bg-white shadow-md rounded-lg">
               <p className="text-center">Your cart is empty.</p>
             </Card>
           ) : (
             <div className="space-y-6">
-              {user.cart.dishes.map((item, index) => (
+              {user?.cart?.dishes.map((item, index) => (
                 <Card key={index} className="p-6 bg-white shadow-md rounded-lg">
                   <div className="flex items-center mb-4">
                     <img
@@ -180,19 +182,18 @@ console.log(user)
               <Card className="p-6 bg-white shadow-md rounded-lg mt-6">
                 <div className="flex justify-between font-semibold">
                   <span>Total Price:</span>
-                  <span>${user.cart.totalPrice.toFixed(2)}</span>
+                  <span>${user?.cart?.totalPrice.toFixed(2)}</span>
                 </div>
               </Card>
             </div>
           )}
         </section>
 
-        {user.cart.dishes.length > 0 && (
+        {user?.cart?.dishes.length > 0 && (
           <div className="mt-8 flex justify-center">
             <Dialog>
               <DialogTrigger>
               <Button
-              className="bg-blue-500 text-white hover:bg-blue-600"
               onClick={() => {
                 console.log(user.cart)
               }}

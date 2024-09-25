@@ -5,6 +5,7 @@ import orderStore from '@/store/orderStore';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
+import Progressing from '@/components/custom/home/Progressing';
 
 const Order = () => {
   const {orders,loading,deleteOrder} = orderStore()
@@ -41,9 +42,7 @@ const Order = () => {
         <section>
           <h2 className="text-3xl font-bold mb-6">My Orders</h2>
           {loading? (
-            <div className="text-center">
-              <p> <Loader2 className='w-4 h-4 animate-spin' /> Loading your orders...</p>
-            </div>
+            <Progressing />
           ) : null}
           {orders.length === 0 ? (
             <Card className="p-6 bg-white shadow-md rounded-lg">
