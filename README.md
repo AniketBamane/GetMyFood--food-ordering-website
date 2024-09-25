@@ -10,7 +10,7 @@
 
   <h2>🚀 About the Project</h2>
 
-  <p><strong>GetMyFood</strong> is a MERN stack-based application that allows users to browse through various
+  <p><strong>GetMyFood</strong> is a MERN stack-based Responsive application that allows users to browse through various
     restaurants, add food items to the cart, and place orders. It also empowers restaurant owners to:</p>
   <ul>
     <li>Create their restaurant profile.</li>

@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 import { Link, useNavigate } from 'react-router-dom';
 
 const verification = () => {
-  const {verification,loading,verifyEmail,cleanVerification} = authStore()
+  const {verification,loading,verifyEmail,} = authStore()
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState('');
   const navigate = useNavigate()
@@ -28,8 +28,8 @@ const verification = () => {
     try{
       if(verification.verificationCode == otp){
         toast('Email verified successfully')
-        cleanVerification()
-        navigate("/")
+        
+        navigate("/signup")
       }else{
         toast.error("entered verification code is not valid !")
       }

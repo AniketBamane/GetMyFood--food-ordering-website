@@ -9,10 +9,10 @@ import { toast } from 'sonner';
 import { useEffect } from 'react';
 
 const Signup = () => {
-  const {loading , signup,verification} = authStore()
+  const {loading , signup,verification,cleanVerification} = authStore()
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
-    email: '',
+    email: verification.email,
     password: '',
     name: '',
     address: {
@@ -48,6 +48,7 @@ const Signup = () => {
       signUpFormData.append('password', formData.password)
       signUpFormData.append('address', JSON.stringify(formData.address))
       await signup(signUpFormData)
+      cleanVerification()
     }catch(err){
       toast.error(err.message)
     }
@@ -102,11 +103,10 @@ const Signup = () => {
               type="email"
               name="email"
               placeholder="you@example.com"
-              value={formData.email}
-              onChange={handleInputChange}
+              value={verification.email}
               className="pl-10"
               required
-              disabled={loading}
+              disabled={true}
             />
           </div>
         </div>
