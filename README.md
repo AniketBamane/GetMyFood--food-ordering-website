@@ -98,7 +98,4 @@
 
   <hr>
 
-  <h2>🌐 Live Demo</h2>
-  <p>Check out the live demo of the application <a href="#">here</a>.</p>
-
 
