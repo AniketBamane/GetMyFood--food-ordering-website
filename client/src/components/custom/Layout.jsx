@@ -8,9 +8,10 @@ import orderStore from '@/store/orderStore'
 
 const Layout = () => {
   const {getOrders} = orderStore()
-  const {getCurrentUser} = authStore()
+  const {getCurrentUser,isAuthenticated,user} = authStore()
   const [loading,setLoading] = useState(false)
   const [error,setError] =  useState("")
+  const navigate = useNavigate()
   const fetchEverything = async ()=>{
    setLoading(true)
    try{
@@ -22,8 +23,6 @@ const Layout = () => {
     }
   }
 
-  const {isAuthenticated,user} = authStore()
-  const navigate = useNavigate()
   useEffect(()=>{
     if(!isAuthenticated){
       navigate("/login")

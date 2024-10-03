@@ -116,13 +116,13 @@ console.log(user)
           { loading ? (
            <Progressing />
           ) : null }
-          {user !== null && user?.cart?.dishes.length === 0 ? (
+          {user !== null && user?.cart?.dishes?.length === 0 ? (
             <Card className="p-6 bg-white shadow-md rounded-lg">
               <p className="text-center">Your cart is empty.</p>
             </Card>
           ) : (
             <div className="space-y-6">
-              {user?.cart?.dishes.map((item, index) => (
+              {user?.cart?.dishes?.map((item, index) => (
                 <Card key={index} className="p-6 bg-white shadow-md rounded-lg">
                   <div className="flex items-center mb-4">
                     <img
@@ -189,7 +189,7 @@ console.log(user)
           )}
         </section>
 
-        {user?.cart?.dishes.length > 0 && (
+        {user?.cart?.dishes?.length > 0 && (
           <div className="mt-8 flex justify-center">
             <Dialog>
               <DialogTrigger>

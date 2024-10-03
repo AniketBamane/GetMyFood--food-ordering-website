@@ -44,7 +44,7 @@ const Order = () => {
           {loading? (
             <Progressing />
           ) : null}
-          {orders.length === 0 ? (
+          {orders?.length === 0 ? (
             <Card className="p-6 bg-white shadow-md rounded-lg">
               <p className="text-center">You have no orders yet.</p>
             </Card>
@@ -54,10 +54,10 @@ const Order = () => {
                 <Card key={order._id} className="p-6 bg-white shadow-md rounded-lg">
                   <div className="mb-4 flex justify-between">
                     <p><strong>Order ID:</strong> {order._id}</p>
-                    <CircleX onClick={()=>handleDelete(order._id)} disabled={loading} />
+                {order.status == "completed" &&     <CircleX onClick={()=>handleDelete(order._id)} disabled={loading} /> }
                   </div>
                   <div className="mb-2">
-                    <strong>Total Price:</strong> ${order.totalPrice.toFixed(2)}
+                    <strong>Total Price:</strong> ${order?.totalPrice?.toFixed(2)}
                   </div>
                   <div className="mb-4">
                     <strong>Status:</strong> {order.status === 'completed' ? <span className="text-green-500"><CheckCircle className='inline' /> {order.status}</span> : <span className="text-red-500"><XCircle className='inline' /> {order.status}</span>}
@@ -72,7 +72,7 @@ const Order = () => {
                   <div className="mt-6">
                     <strong>Ordered Items:</strong>
                     <div className="mt-4">
-                      {order.items.map((item, index) => (
+                      {order?.items?.map((item, index) => (
                         <div key={index} className="flex items-center mb-4">
                           <img src={item.dish.imageUrl} alt={item.dish.name} className="w-16 h-16 object-cover rounded-md mr-4" />
                           <div>

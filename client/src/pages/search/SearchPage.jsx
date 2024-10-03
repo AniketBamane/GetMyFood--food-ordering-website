@@ -67,22 +67,12 @@ const SearchPage = () => {
    console.log(results)
   return (
     <div className="container mx-auto p-6">
-      <Button className="w-10 h-10 rounded-full relative" onClick={()=>{
+      <Button className="w-10 h-10 mb-2 rounded-full relative" onClick={()=>{
         navigate(-1);
       }}>
         <ArrowLeft className='absolute' />
       </Button>
-      <div className="mb-2 flex items-center space-x-2 w-[80%] mx-auto">
-        <Input
-          placeholder="Search for restaurants..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full p-2 border border-gray-300 rounded-md flex-grow"
-        />
-        <Button onClick={handleSearch} >
-          <Search />
-        </Button>
-      </div>
+    
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {loading && (
